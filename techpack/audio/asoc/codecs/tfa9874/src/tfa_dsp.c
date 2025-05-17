@@ -1437,7 +1437,7 @@ void tfa98xx_convert_data2bytes(int num_data, const int data[],
 		_ASSERT(d < (1 << 24)); /* max 24 bits in use */
 		bytes[k] = (d >> 16) & 0xFF; /* MSB */
 		bytes[k + 1] = (d >> 8) & 0xFF;
-		bytes[k + 2] = (d)&0xFF; /* LSB */
+		bytes[k + 2] = (d) & 0xFF; /* LSB */
 	}
 }
 

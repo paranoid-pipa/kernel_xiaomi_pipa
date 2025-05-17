@@ -501,7 +501,11 @@ static const char *wm_vpu_fw_text[WM_VPU_NUM_FW] = {
 	[WM_VPU_FW_MISC] = "Misc",
 };
 
+#ifdef CONFIG_MACH_XIAOMI_DRACO
+#define CAL_R_DEFAULT 11190
+#else
 #define CAL_R_DEFAULT 8392
+#endif
 
 #define AMBIENT_DEFAULT 30
 #define CAL_STATUS_DEFAULT 1
@@ -2249,7 +2253,7 @@ static int wm_adsp_load(struct wm_adsp *dsp)
 			snprintf(file, PAGE_SIZE, "%s",
 				 dsp->firmwares[dsp->fw].file);
 		else {
-#ifdef CONFIG_AUDIO_SMARTPA_STEREO
+#if defined(CONFIG_AUDIO_SMARTPA_STEREO)
 			if (dsp->chip_revid == 0xB2) {
 				snprintf(file, PAGE_SIZE,
 					 "%s-%s%d-%s-revb2.wmfw", dsp->part,
@@ -3178,7 +3182,7 @@ static int wm_adsp_load_coeff(struct wm_adsp *dsp)
 		snprintf(file, PAGE_SIZE, "%s-dsp%d-%s.bin", dsp->part,
 			 dsp->num, dsp->firmwares[dsp->fw].binfile);
 	else
-#ifdef CONFIG_AUDIO_SMARTPA_STEREO
+#if defined(CONFIG_AUDIO_SMARTPA_STEREO)
 		if (dsp->chip_revid == 0xB2) {
 		//for B2 chip
 		if (dsp->component->name_prefix)

@@ -619,7 +619,8 @@ typedef enum nxpTfaDescriptorType {
 #define TFA_BITFIELDDSCMSK 0x7fffffff
 typedef struct nxpTfaDescPtr {
 	uint32_t offset : 24;
-	uint32_t type : 8; // (== enum nxpTfaDescriptorType, assure 8bits length)
+	uint32_t type
+		: 8; // (== enum nxpTfaDescriptorType, assure 8bits length)
 } nxpTfaDescPtr_t;
 
 /*

@@ -63,53 +63,54 @@ struct wsa_reg_mask_val {
 };
 
 static const struct wsa_reg_mask_val reg_init[] = {
-	{WSA883X_PA_FSM_BYP, 0x01, 0x00},
-	{WSA883X_ISENSE2, 0xE0, 0x40},
-	{WSA883X_ADC_6, 0x02, 0x02},
-	{WSA883X_CDC_SPK_DSM_A2_0, 0xFF, 0x0A},
-	{WSA883X_CDC_SPK_DSM_A2_1, 0x0F, 0x08},
-	{WSA883X_CDC_SPK_DSM_A3_0, 0xFF, 0xF3},
-	{WSA883X_CDC_SPK_DSM_A3_1, 0x07, 0x07},
-	{WSA883X_CDC_SPK_DSM_A4_0, 0xFF, 0x79},
-	{WSA883X_CDC_SPK_DSM_A4_1, 0x03, 0x02},
-	{WSA883X_CDC_SPK_DSM_A5_0, 0xFF, 0x0B},
-	{WSA883X_CDC_SPK_DSM_A5_1, 0x03, 0x02},
-	{WSA883X_CDC_SPK_DSM_A6_0, 0xFF, 0x8A},
-	{WSA883X_CDC_SPK_DSM_A7_0, 0xFF, 0x9B},
-	{WSA883X_CDC_SPK_DSM_C_0, 0xFF, 0x68},
-	{WSA883X_CDC_SPK_DSM_C_1, 0xFF, 0x54},
-	{WSA883X_CDC_SPK_DSM_C_2, 0xFF, 0xF2},
-	{WSA883X_CDC_SPK_DSM_C_3, 0x3F, 0x20},
-	{WSA883X_CDC_SPK_DSM_R1, 0xFF, 0x83},
-	{WSA883X_CDC_SPK_DSM_R2, 0xFF, 0x7F},
-	{WSA883X_CDC_SPK_DSM_R3, 0xFF, 0x9D},
-	{WSA883X_CDC_SPK_DSM_R4, 0xFF, 0x82},
-	{WSA883X_CDC_SPK_DSM_R5, 0xFF, 0x8B},
-	{WSA883X_CDC_SPK_DSM_R6, 0xFF, 0x9B},
-	{WSA883X_CDC_SPK_DSM_R7, 0xFF, 0x3F},
-	{WSA883X_DRE_CTL_0, 0xF0, 0x90},
-	{WSA883X_DRE_IDLE_DET_CTL, 0x10, 0x00},
-	{WSA883X_CURRENT_LIMIT, 0x78, 0x20},
-	{WSA883X_DRE_CTL_0, 0x07, 0x02},
-	{WSA883X_VAGC_TIME, 0x0F, 0x0F},
-	{WSA883X_VAGC_ATTN_LVL_3, 0x07, 0x02},
-	{WSA883X_VAGC_CTL, 0x01, 0x01},
-	{WSA883X_TAGC_CTL, 0x0E, 0x0A},
-	{WSA883X_TAGC_TIME, 0x0C, 0x0C},
-	{WSA883X_TAGC_E2E_GAIN, 0x1F, 0x02},
-	{WSA883X_TEMP_CONFIG0, 0x07, 0x02},
-	{WSA883X_TEMP_CONFIG1, 0x07, 0x02},
-	{WSA883X_OTP_REG_1, 0xFF, 0x49},
-	{WSA883X_OTP_REG_2, 0xC0, 0x80},
-	{WSA883X_OTP_REG_3, 0xFF, 0xC9},
-	{WSA883X_OTP_REG_4, 0xC0, 0x40},
-	{WSA883X_TAGC_CTL, 0x01, 0x01},
-	{WSA883X_ADC_2, 0x40, 0x00},
-	{WSA883X_ADC_7, 0x04, 0x04},
-	{WSA883X_ADC_7, 0x02, 0x02},
-	{WSA883X_CKWD_CTL_0, 0x60, 0x00},
-	{WSA883X_CKWD_CTL_1, 0x1F, 0x1B},
-	{WSA883X_GMAMP_SUP1, 0x60, 0x60},
+	{ WSA883X_PA_FSM_BYP, 0x01, 0x00 },
+	{ WSA883X_ISENSE2, 0xE0, 0x40 },
+	{ WSA883X_ADC_6, 0x02, 0x02 },
+	{ WSA883X_CDC_SPK_DSM_A2_0, 0xFF, 0x0A },
+	{ WSA883X_CDC_SPK_DSM_A2_1, 0x0F, 0x08 },
+	{ WSA883X_CDC_SPK_DSM_A3_0, 0xFF, 0xF3 },
+	{ WSA883X_CDC_SPK_DSM_A3_1, 0x07, 0x07 },
+	{ WSA883X_CDC_SPK_DSM_A4_0, 0xFF, 0x79 },
+	{ WSA883X_CDC_SPK_DSM_A4_1, 0x03, 0x02 },
+	{ WSA883X_CDC_SPK_DSM_A5_0, 0xFF, 0x0B },
+	{ WSA883X_CDC_SPK_DSM_A5_1, 0x03, 0x02 },
+	{ WSA883X_CDC_SPK_DSM_A6_0, 0xFF, 0x8A },
+	{ WSA883X_CDC_SPK_DSM_A7_0, 0xFF, 0x9B },
+	{ WSA883X_CDC_SPK_DSM_C_0, 0xFF, 0x68 },
+	{ WSA883X_CDC_SPK_DSM_C_1, 0xFF, 0x54 },
+	{ WSA883X_CDC_SPK_DSM_C_2, 0xFF, 0xF2 },
+	{ WSA883X_CDC_SPK_DSM_C_3, 0x3F, 0x20 },
+	{ WSA883X_CDC_SPK_DSM_R1, 0xFF, 0x83 },
+	{ WSA883X_CDC_SPK_DSM_R2, 0xFF, 0x7F },
+	{ WSA883X_CDC_SPK_DSM_R3, 0xFF, 0x9D },
+	{ WSA883X_CDC_SPK_DSM_R4, 0xFF, 0x82 },
+	{ WSA883X_CDC_SPK_DSM_R5, 0xFF, 0x8B },
+	{ WSA883X_CDC_SPK_DSM_R6, 0xFF, 0x9B },
+	{ WSA883X_CDC_SPK_DSM_R7, 0xFF, 0x3F },
+	{ WSA883X_DRE_CTL_0, 0xF0, 0x90 },
+	{ WSA883X_DRE_IDLE_DET_CTL, 0x10, 0x00 },
+	{ WSA883X_CURRENT_LIMIT, 0x78, 0x20 },
+	{ WSA883X_DRE_CTL_0, 0x07, 0x02 },
+	{ WSA883X_VAGC_TIME, 0x0F, 0x0F },
+	{ WSA883X_VAGC_ATTN_LVL_3, 0x07, 0x02 },
+	{ WSA883X_VAGC_CTL, 0x01, 0x01 },
+	{ WSA883X_TAGC_CTL, 0x0E, 0x0A },
+	{ WSA883X_TAGC_TIME, 0x0C, 0x0C },
+	{ WSA883X_TAGC_E2E_GAIN, 0x1F, 0x02 },
+	{ WSA883X_TEMP_CONFIG0, 0x07, 0x02 },
+	{ WSA883X_TEMP_CONFIG1, 0x07, 0x02 },
+	{ WSA883X_OTP_REG_1, 0xFF, 0x49 },
+	{ WSA883X_OTP_REG_2, 0xC0, 0x80 },
+	{ WSA883X_OTP_REG_3, 0xFF, 0xC9 },
+	{ WSA883X_OTP_REG_4, 0xC0, 0x40 },
+	{ WSA883X_TAGC_CTL, 0x01, 0x01 },
+	{ WSA883X_ADC_2, 0x40, 0x00 },
+	{ WSA883X_ADC_7, 0x04, 0x04 },
+	{ WSA883X_ADC_7, 0x02, 0x02 },
+	{ WSA883X_CKWD_CTL_0, 0x60, 0x00 },
+	{ WSA883X_DRE_CTL_1, 0x3E, 0x20 },
+	{ WSA883X_CKWD_CTL_1, 0x1F, 0x1B },
+	{ WSA883X_GMAMP_SUP1, 0x60, 0x60 },
 };
 
 static int wsa883x_get_temperature(struct snd_soc_component *component,
@@ -480,8 +481,33 @@ static irqreturn_t wsa883x_uvlo_handle_irq(int irq, void *data)
 
 static irqreturn_t wsa883x_pa_on_err_handle_irq(int irq, void *data)
 {
-	pr_err_ratelimited("%s: interrupt for irq =%d triggered\n",
-			   __func__, irq);
+	u8 pa_fsm_sta = 0, pa_fsm_err = 0;
+	struct wsa883x_priv *wsa883x = data;
+	struct snd_soc_component *component = NULL;
+
+	if (!wsa883x)
+		return IRQ_NONE;
+
+	component = wsa883x->component;
+	if (!component)
+		return IRQ_NONE;
+
+	pa_fsm_sta = (snd_soc_component_read32(component, WSA883X_PA_FSM_STA) &
+		      0x70);
+
+	if (pa_fsm_sta)
+		pa_fsm_err = snd_soc_component_read32(component,
+						      WSA883X_PA_FSM_ERR_COND);
+	pr_err_ratelimited("%s: irq: %d, pa_fsm_sta: %d, pa_fsm_err: %d\n",
+			   __func__, irq, pa_fsm_sta, pa_fsm_err);
+
+	snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL, 0x10,
+				      0x00);
+	snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL, 0x10,
+				      0x10);
+	snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL, 0x10,
+				      0x00);
+
 	return IRQ_HANDLED;
 }
 
@@ -769,6 +795,30 @@ int wsa883x_codec_info_create_codec_entry(struct snd_info_entry *codec_root,
 }
 EXPORT_SYMBOL(wsa883x_codec_info_create_codec_entry);
 
+/*
+ * wsa883x_codec_get_dev_num - returns swr device number
+ * @component: Codec instance
+ *
+ * Return: swr device number on success or negative error
+ * code on failure.
+ */
+int wsa883x_codec_get_dev_num(struct snd_soc_component *component)
+{
+	struct wsa883x_priv *wsa883x;
+
+	if (!component)
+		return -EINVAL;
+
+	wsa883x = snd_soc_component_get_drvdata(component);
+	if (!wsa883x) {
+		pr_err("%s: wsa883x component is NULL\n", __func__);
+		return -EINVAL;
+	}
+
+	return wsa883x->swr_slave->dev_num;
+}
+EXPORT_SYMBOL(wsa883x_codec_get_dev_num);
+
 static int wsa883x_get_compander(struct snd_kcontrol *kcontrol,
 			       struct snd_ctl_elem_value *ucontrol)
 {
@@ -986,9 +1036,20 @@ static int wsa883x_spkr_event(struct snd_soc_dapm_widget *w,
 		swr_slvdev_datapath_control(wsa883x->swr_slave,
 					    wsa883x->swr_slave->dev_num,
 					    true);
+		/* Added delay as per HW sequence */
+		usleep_range(250, 300);
+		snd_soc_component_update_bits(component, WSA883X_DRE_CTL_1,
+					      0x01, 0x01);
+		/* Added delay as per HW sequence */
+		usleep_range(250, 300);
+		wcd_enable_irq(&wsa883x->irq_info, WSA883X_IRQ_INT_PA_ON_ERR);
 		/* Force remove group */
 		swr_remove_from_group(wsa883x->swr_slave,
 				      wsa883x->swr_slave->dev_num);
+		snd_soc_component_update_bits(
+			component, WSA883X_VBAT_ADC_FLT_CTL, 0x0E, 0x06);
+		snd_soc_component_update_bits(
+			component, WSA883X_VBAT_ADC_FLT_CTL, 0x01, 0x01);
 		if (test_bit(SPKR_ADIE_LB, &wsa883x->status_mask))
 			snd_soc_component_update_bits(component,
 				WSA883X_PA_FSM_CTL, 0x01, 0x01);
@@ -997,11 +1058,21 @@ static int wsa883x_spkr_event(struct snd_soc_dapm_widget *w,
 		if (!test_bit(SPKR_ADIE_LB, &wsa883x->status_mask))
 			wcd_disable_irq(&wsa883x->irq_info,
 					WSA883X_IRQ_INT_PDM_WD);
+		snd_soc_component_update_bits(
+			component, WSA883X_VBAT_ADC_FLT_CTL, 0x01, 0x00);
+		snd_soc_component_update_bits(
+			component, WSA883X_VBAT_ADC_FLT_CTL, 0x0E, 0x00);
 		snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL,
-				0x01, 0x00);
+					      0x01, 0x00);
+		snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL,
+					      0x10, 0x00);
+		snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL,
+					      0x10, 0x10);
+		snd_soc_component_update_bits(component, WSA883X_PA_FSM_CTL,
+					      0x10, 0x00);
 		snd_soc_component_update_bits(wsa883x->component,
-					WSA883X_PDM_WD_CTL,
-					0x01, 0x00);
+					      WSA883X_PDM_WD_CTL, 0x01, 0x00);
+		wcd_disable_irq(&wsa883x->irq_info, WSA883X_IRQ_INT_PA_ON_ERR);
 		clear_bit(SPKR_STATUS, &wsa883x->status_mask);
 		clear_bit(SPKR_ADIE_LB, &wsa883x->status_mask);
 		break;
@@ -1393,6 +1464,13 @@ static int wsa883x_event_notify(struct notifier_block *nb,
 						0x01, 0x01);
 			wcd_enable_irq(&wsa883x->irq_info,
 					WSA883X_IRQ_INT_PDM_WD);
+			/* Added delay as per HW sequence */
+			usleep_range(3000, 3100);
+			snd_soc_component_update_bits(wsa883x->component,
+						      WSA883X_DRE_CTL_1, 0x01,
+						      0x00);
+			/* Added delay as per HW sequence */
+			usleep_range(5000, 5050);
 		}
 		break;
 	case BOLERO_WSA_EVT_PA_ON_POST_FSCLK_ADIE_LB:
@@ -1544,7 +1622,7 @@ static int wsa883x_swr_probe(struct swr_device *pdev)
 			"WSA UVLO", wsa883x_uvlo_handle_irq, NULL);
 
 	wcd_request_irq(&wsa883x->irq_info, WSA883X_IRQ_INT_PA_ON_ERR,
-			"WSA PA ERR", wsa883x_pa_on_err_handle_irq, NULL);
+			"WSA PA ERR", wsa883x_pa_on_err_handle_irq, wsa883x);
 
 	wcd_disable_irq(&wsa883x->irq_info, WSA883X_IRQ_INT_PA_ON_ERR);
 
