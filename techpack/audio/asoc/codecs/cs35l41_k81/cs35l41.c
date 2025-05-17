@@ -3797,6 +3797,7 @@ int cs35l41_probe(struct cs35l41_private *cs35l41,
 	ret = snd_soc_register_component(cs35l41->dev,
 					 &soc_component_dev_cs35l41,
 					 cs35l41_dai, ARRAY_SIZE(cs35l41_dai));
+
 	if (ret < 0) {
 		dev_err(cs35l41->dev, "%s: Register codec failed\n", __func__);
 		goto err;

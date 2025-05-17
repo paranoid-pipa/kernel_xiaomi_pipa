@@ -1752,7 +1752,7 @@ static int tfa98xx_create_controls(struct tfa98xx *tfa98xx)
 	if (!tfa98xx_controls)
 		return -ENOMEM;
 
-		/* Create a mixer item for selecting the active profile */
+	/* Create a mixer item for selecting the active profile */
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 18, 0)
 	name = devm_kzalloc(tfa98xx->component->dev, MAX_CONTROL_NAME,
 			    GFP_KERNEL);

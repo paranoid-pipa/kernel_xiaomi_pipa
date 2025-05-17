@@ -154,12 +154,14 @@ struct wm_adsp_ops {
 };
 
 #define WM_ADSP_PRELOADER(wname, num, event_fn)                                \
-	{                                                                      \
-		.id = snd_soc_dapm_supply, .name = wname " Preloader",         \
-		.reg = SND_SOC_NOPM, .shift = num, .event = event_fn,          \
-		.event_flags = SND_SOC_DAPM_PRE_PMU | SND_SOC_DAPM_PRE_PMD,    \
-		.subseq = 100, /* Ensure we run after SYSCLK supply widget */  \
-	}
+	{ .id = snd_soc_dapm_supply,                                           \
+	  .name = wname " Preloader",                                          \
+	  .reg = SND_SOC_NOPM,                                                 \
+	  .shift = num,                                                        \
+	  .event = event_fn,                                                   \
+	  .event_flags = SND_SOC_DAPM_PRE_PMU | SND_SOC_DAPM_PRE_PMD,          \
+	  .subseq = 100,                                                       \
+	  /* Ensure we run after SYSCLK supply widget */ }
 
 #define WM_ADSP1(wname, num)                                                   \
 	SND_SOC_DAPM_PGA_E(wname, SND_SOC_NOPM, num, 0, NULL, 0,               \
