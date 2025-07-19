@@ -134,3 +134,13 @@ all.config
 
 # fetched Android config fragments
 kernel/configs/android-*.cfg
+
+# build system
+tc/
+out/
+toolchain/
+toolchains/
+anykernel/
+AnyKernel3/
+error.log
+Kernel_*
