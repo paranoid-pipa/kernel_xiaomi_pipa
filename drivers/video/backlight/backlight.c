@@ -182,6 +182,7 @@ int backlight_device_set_brightness(struct backlight_device *bd,
 			rc = -EINVAL;
 		else {
 			if ((!bd->use_count && brightness) || (bd->use_count && !brightness)) {
+				pr_info("%s: set brightness to %lu\n", __func__, brightness);
 				if (!bd->use_count)
 					bd->use_count++;
 				else
@@ -294,12 +295,45 @@ static void bl_device_release(struct device *dev)
 	kfree(bd);
 }
 
+static ssize_t brightness_clone_show(struct device *dev,
+		struct device_attribute *attr, char *buf)
+{
+	struct backlight_device *bd = to_backlight_device(dev);
+
+	return snprintf(buf, PAGE_SIZE, "%d\n", bd->props.brightness_clone);
+}
+
+static ssize_t brightness_clone_store(struct device *dev,
+		struct device_attribute *attr, const char *buf, size_t count)
+{
+	int rc;
+	struct backlight_device *bd = to_backlight_device(dev);
+	unsigned long brightness;
+	char *envp[2];
+
+	rc = kstrtoul(buf, 0, &brightness);
+	if (rc)
+		return rc;
+
+	bd->props.brightness_clone_backup = brightness;
+	bd->props.brightness_clone = brightness;
+	envp[0] = "SOURCE=sysfs";
+	envp[1] = NULL;
+	kobject_uevent_env(&bd->dev.kobj, KOBJ_CHANGE, envp);
+	sysfs_notify(&bd->dev.kobj, NULL, "brightness_clone");
+
+	return count;
+}
+
+static DEVICE_ATTR_RW(brightness_clone);
+
 static struct attribute *bl_device_attrs[] = {
 	&dev_attr_bl_power.attr,
 	&dev_attr_brightness.attr,
 	&dev_attr_actual_brightness.attr,
 	&dev_attr_max_brightness.attr,
 	&dev_attr_type.attr,
+	&dev_attr_brightness_clone.attr,
 	NULL,
 };
 ATTRIBUTE_GROUPS(bl_device);
@@ -355,14 +389,14 @@ static int bd_cdev_set_cur_brightness(struct thermal_cooling_device *cdev,
 	brightness_lvl = bd->props.max_brightness - state;
 	if (brightness_lvl == bd->thermal_brightness_limit)
 		return 0;
-
 	bd->thermal_brightness_limit = brightness_lvl;
+
 	brightness_lvl = (bd->usr_brightness_req
 				<= bd->thermal_brightness_limit) ?
 				bd->usr_brightness_req :
 				bd->thermal_brightness_limit;
-	backlight_device_set_brightness(bd, brightness_lvl);
 
+	backlight_device_set_brightness(bd, brightness_lvl);
 	return 0;
 }
 
@@ -518,6 +552,8 @@ struct backlight_device *backlight_device_get_by_type_b(enum backlight_type type
 	return found ? bd : NULL;
 }
 EXPORT_SYMBOL(backlight_device_get_by_type_b);
+
+
 
 /**
  * backlight_device_unregister - unregisters a backlight device object.
