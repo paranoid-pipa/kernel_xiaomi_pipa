@@ -30,11 +30,11 @@ struct ktz8866 {
 	struct ktz8866_platform_data *pdata;
 };
 
-static struct ktz8866 *bd;
+struct ktz8866 *bd;
 
 static struct ktz8866_led g_ktz8866_led;
 
-static int ktz8866_read(u8 reg, u8 *data)
+int ktz8866_read(u8 reg, u8 *data)
 {
 	int ret;
 
@@ -49,7 +49,7 @@ static int ktz8866_read(u8 reg, u8 *data)
 	return 0;
 }
 
-static int ktz8866_write(u8 reg, u8 data)
+int ktz8866_write(u8 reg, u8 data)
 {
 	return i2c_smbus_write_byte_data(bd->client, reg, data);
 }
