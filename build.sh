@@ -54,6 +54,7 @@ fi
 
     rm -rf anykernel/kernels/
     mkdir -p anykernel/kernels/
+    cp out/arch/arm64/boot/Image out/arch/arm64/boot/kernel
     cp out/arch/arm64/boot/Image anykernel/kernels/
     cp out/arch/arm64/boot/dtb anykernel/kernels/
 
